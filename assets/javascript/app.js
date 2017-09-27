@@ -1,21 +1,21 @@
-$(document).ready(function () {
-    var $timer = $("#timer");
+var count = 90;
 
-    function update() {
-        var myTime = $timer.html();
-        var ss = myTime.split(":");
-        var dt = new Date();
-        dt.setHours(0);
-        dt.setMinutes(ss[0]);
-        dt.setSeconds(ss[1]);
-        
-        var dt2 = new Date(dt.valueOf() - 1000);
-        var temp = dt2.toTimeString().split(" ");
-        var ts = temp[0].split(":");
-        
-        $timer.html(ts[1]+":"+ts[2]);
-        setTimeout(update, 1000);
-    }
+var gameTime = setInterval("counter()", 1000);
 
-    setTimeout(update, 1000);
-});
+function convertSeconds(s){
+    var min = Math.floor(s / 60);
+    var sec = s % 60;
+    return min + ":" + sec;
+}
+
+function counter(){
+count--;
+$("#timer").text(convertSeconds(count));
+if (count === 0) {
+    clearInterval(gameTime);
+} else {
+    //Do nothing
+}
+}
+
+
