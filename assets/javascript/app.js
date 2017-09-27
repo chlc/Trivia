@@ -1,24 +1,21 @@
-var countDownDate = new Date("Jan 5, 2018 15:37:25").getTime();
+$(document).ready(function () {
+    var $timer = $("#timer");
 
-// Update the count down every 1 second
-var x = setInterval(function() {
-
-    // Get todays date and time
-    var now = new Date().getTime();
-    
-    // Find the distance between now an the count down date
-    var distance = countDownDate - now;
-    
-    // Time calculations for days, hours, minutes and seconds
-    var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-    var seconds = Math.floor((distance % (1000 * 60)) / 1000);
-    
-    // Output the result in an element with id="demo"
-    document.getElementById("timer").innerHTML = minutes + "m " + seconds + "s " seconds + "s ";
-    
-    // If the count down is over, write some text 
-    if (distance < 0) {
-        clearInterval(x);
-        document.getElementById("timer").innerHTML = "EXPIRED";
+    function update() {
+        var myTime = $timer.html();
+        var ss = myTime.split(":");
+        var dt = new Date();
+        dt.setHours(0);
+        dt.setMinutes(ss[0]);
+        dt.setSeconds(ss[1]);
+        
+        var dt2 = new Date(dt.valueOf() - 1000);
+        var temp = dt2.toTimeString().split(" ");
+        var ts = temp[0].split(":");
+        
+        $timer.html(ts[1]+":"+ts[2]);
+        setTimeout(update, 1000);
     }
-}, 1000);
+
+    setTimeout(update, 1000);
+});
