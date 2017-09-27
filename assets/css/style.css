@@ -1,0 +1,11 @@
+body{
+	background-image: url("../images/dark-triangles.png");
+}
+#mainbox {
+	margin: auto 100px auto 100px;
+	border-style: dashed;
+	border-color: #f1b695;
+	background-color: white;
+	border-width: 5px;
+
+}
