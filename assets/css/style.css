@@ -1,11 +1,17 @@
 body{
 	background-image: url("../images/dark-triangles.png");
+	font-family: 'Bubbler One', sans-serif;
+
 }
 #mainbox {
-	margin: auto 100px auto 100px;
+	margin: 100px auto;
+	text-align: center;
+	height: 230px;
+	width: 605px;
 	border-style: dashed;
 	border-color: #f1b695;
 	background-color: white;
 	border-width: 5px;
+	
 
 }
