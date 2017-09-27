@@ -10,10 +10,11 @@ var x = setInterval(function() {
     var distance = countDownDate - now;
     
     // Time calculations for days, hours, minutes and seconds
+    var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
     var seconds = Math.floor((distance % (1000 * 60)) / 1000);
     
     // Output the result in an element with id="demo"
-    document.getElementById("timer").innerHTML = seconds + "s ";
+    document.getElementById("timer").innerHTML = minutes + "m " + seconds + "s " seconds + "s ";
     
     // If the count down is over, write some text 
     if (distance < 0) {
