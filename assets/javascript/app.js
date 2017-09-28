@@ -1,43 +1,52 @@
 $( document ).ready(function(){
-
-$("#mainbox").hide();
-
-$("zbeginning").click(function(){
-
-$("#begin").hide();
+$("#result").hide();
+$("#mainbox").hide();  
+$("#beginning").click(function(){
+  $("#begin").hide();
   $("#mainbox").show();
-  startTime();
+  startTimer();  
+
+})  
+
+$("#again").click(function(){
+  $("#answers").hide();
+  $("#mainbox").show();
+  score = 0;
+  timer = duration;
+  userInput = new Array();
+  answers = new Array(10);
 
 })
+
 
 $("#done").click(function(){
   returnScore();
 })
 
-//Setting up the countdown timer
-function startTime(duration, display) {
-var count = 90;
+function startTimer(duration, display) {
+    var timer = duration, minutes, seconds;
+    setInterval(function () {
+        minutes = parseInt(timer / 60, 10);
+        seconds = parseInt(timer % 60, 10);
 
-function startTime(duration, display){
-var gameTime = setInterval("counter()", 1000);
+        minutes = minutes < 10 ? "0" + minutes : minutes;
+        seconds = seconds < 10 ? "0" + seconds : seconds;
+    
+        display.text(minutes + ":" + seconds);
 
-function convertSeconds(s){
-    var min = Math.floor(s / 60);
-    var sec = s % 60;
-    return min + ":" + sec;
+        if (--timer < 0) {
+            timer = duration;
+        }
+    }, 1000);
+
+function stopTime(){
+
+}    
 }
 
-function counter(){
-count--;
-$("#timer").text(convertSeconds(count));
-if (count === 0) {
-    clearInterval(gameTime);
-} else {
-    //Do nothing
-}
-}
 
-}
+
+
 
 jQuery(function ($) {
     var fiveMinutes = 60 * 1.5,
@@ -45,12 +54,11 @@ jQuery(function ($) {
     startTimer(fiveMinutes, display);
 });
 
-
 var userInput = new Array();
 var answers = new Array(5);
 
 answers[1]='c' //question 1 solution
-answers[2]='b' //question 2 solution, and so on.
+answers[2]='b'
 answers[3]='a'
 answers[4]='d'
 answers[5]='a'
@@ -73,18 +81,13 @@ function getScore(){
 
 function returnScore(){
   $("#answers").show();
-  $("#box1").hide();
+  $("#mainbox").hide();
 
-  $("#result").text("Your score is "+ getScore() +" out of "+ tot +".");
+  $("#result").text("Your score is "+ getScore() +" out of "+ tot +"!");
 
 }
 
 
 
 
-
-
-
 });
-
-
