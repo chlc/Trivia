@@ -3,10 +3,35 @@ body{
 	font-family: 'Bubbler One', sans-serif;
 
 }
+
+
+#begin { 
+	margin: 100px auto;
+	text-align: center;
+	height: 250px;
+	width: 605px;
+	border-style: dashed;
+	border-color: #f1b695;
+	background-color: white;
+	border-width: 5px;
+
+
+}
+
+#beginning {
+	color: black;
+	border-style: dashed;
+	border-style: outset;
+	padding: 12px 22px 12px 22px;
+	font-size: 200%;
+	background-color: ##f1b695;
+	font-family: 'Bubbler One', sans-serif;
+
+}
 #mainbox {
 	margin: 100px auto;
 	text-align: center;
-	height: 1050px;
+	height: 550px;
 	width: 605px;
 	border-style: dashed;
 	border-color: #f1b695;

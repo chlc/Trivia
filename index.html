@@ -3,7 +3,7 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Beverage Trivia</title>
-	<script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
+	<script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
 	<link rel="shortcut icon" href="https://thumb.ibb.co/b1vBBa/favicon.png" type="image/png">
 	<link href="assets/css/style.css" rel="stylesheet" type="text/css">
 	<script type="text/javascript" src="assets/javascript/app.js"></script>
@@ -12,52 +12,100 @@
 
 </head>
 <body>
-	<div id = "mainbox">
 
+	<div id="begin" class="unhidden">
 	<h1>Trivia Game</h1>
-	<h2>Answer the following, don't run out of time!</h2>
-	 <b>Remaining Time:</b><div id ="timer"></div>
-	<p><b>Where is Cognac?</b></p>
-	<form action="">
-  <input type="radio" id ="radio1" name="radios" value="wrong"> England
-  <input type="radio" id ="radio2" name="radios" value="wrong"> Belgium
-  <input type="radio" id ="radio3" name="radios" value="correct"> France
-  <input type="radio" id ="radio4" name="radios" value="wrong"> None of These
-</form><br>
-	<p><b>What does Terroir mean?</b></p>
-	<form action="">
-  <input type="radio" id ="radio5" name="radios" value="wrong"> French word for taste
-  <input type="radio" id ="radio6" name="radios" value="correct"> It refers to environmental factors that affect taste
-  <input type="radio" id ="radio7" name="radios" value="wrong"> The residue left inside a wine bottle 
-  <input type="radio" id ="radio8" name="radios" value="wrong"> None of These
-</form><br>
-<p><b>What is Genever?</b></p>
-	<form action="">
-  <input type="radio" id ="radio9" name="radios" value="correct"> The original style of gin
-  <input type="radio" id ="radio10" name="radios" value="wrong"> A type of vodka 
-  <input type="radio" id ="radio11" name="radios" value="wrong"> A by-product of yeast fermentation
-  <input type="radio" id ="radio12" name="radios" value="wrong"> None of These
-</form><br>
-<p><b>What is the name of the tequila brand partly owned by George Clooney?</b></p>
-	<form action="">
-  <input type="radio" id ="radio13" name="radios" value="wrong"> Don Julio
-  <input type="radio" id ="radio14" name="radios" value="wrong"> El Milagro
-  <input type="radio" id ="radio15" name="radios" value="wrong"> Sauzas
-  <input type="radio" id ="radio16" name="radios" value="correct"> Casamigos
-</form><br>
-<p><b>What is a corkage fee?</b></p>
-	<form action="">
-  <input type="radio" id ="radio17" name="radios" value="correct"> The fee the restaurant will charge you for bringing your own wine
-  <input type="radio" id ="radio18" name="radios" value="wrong"> The fee charged to a winery for spoiled wine
-  <input type="radio" id ="radio19" name="radios" value="wrong"> A state-mandated tax on all wines sold within that state
-  <input type="radio" id ="radio20" name="radios" value="wrong"> None of These
+	<h2>Don't run out of time!</h2>
+	<p>
+	<button id="beginning">Start</button>
+	</p>
+	<br>
+
+<!--<a id="startButt" href="" class="button">Start</a><br><br>-->
+    
+</div>	
+
+
+	<div id = "mainbox" class="hidden">
+
+	<h2>Answer the following:</h2>
+	<h2 id="timer">Remaining Time: </h2>
+
+	 <form method="POST" id="questions">
+
+
+<div class="qheader">
+<b>Where is Cognac?</b>
+<div class="qselections">
+  <input type="radio" id ="radio1" name="radios1" value="a"> England
+  <input type="radio" id ="radio2" name="radios1" value="b"> Belgium
+  <input type="radio" id ="radio3" name="radios1" value="c"> France
+  <input type="radio" id ="radio4" name="radios1" value="d"> None of These
+</div>
+
+<br>
+
+
+<div class="qheader">
+<b>What does Terroir mean?</b>
+<div class="qselections">
+  <input type="radio" id ="radio5" name="radios2" value="a"> French word for taste
+  <input type="radio" id ="radio6" name="radios2" value="b"> It refers to environmental factors that affect taste
+  <input type="radio" id ="radio7" name="radios2" value="c"> The residue left inside a wine bottle 
+  <input type="radio" id ="radio8" name="radios2" value="d"> None of These
+</div>
+<br>
+
+
+<div class="qheader">
+<b>What is Genever?</b>
+<div class="qselections">
+  <input type="radio" id ="radio9" name="radios3" value="a"> The original style of gin
+  <input type="radio" id ="radio10" name="radios3" value="b"> A type of vodka 
+  <input type="radio" id ="radio11" name="radios3" value="c"> A by-product of yeast fermentation
+  <input type="radio" id ="radio12" name="radios3" value="d"> None of These
+</div>
+<br>
+
+
+<div class="qheader">
+<b>What is the name of the tequila brand partly owned by George Clooney?</b>
+<div class="qselections">
+  <input type="radio" id ="radio13" name="radios4" value="a"> Don Julio
+  <input type="radio" id ="radio14" name="radios4" value="b"> El Milagro
+  <input type="radio" id ="radio15" name="radios4" value="c"> Sauzas
+  <input type="radio" id ="radio16" name="radios4" value="d"> Casamigos
+</div>
+<br>
+
+
+<div class="qheader">
+<b>What is a corkage fee?</b>
+<div class="qselections">
+  <input type="radio" id ="radio17" name="radios5" value="a"> The fee the restaurant will charge you for bringing your own wine
+  <input type="radio" id ="radio18" name="radios5" value="b"> The fee charged to a winery for spoiled wine
+  <input type="radio" id ="radio19" name="radios5" value="c"> A state-mandated tax on all wines sold within that state
+  <input type="radio" id ="radio20" name="radios5" value="d"> None of These
+</div>
+
 </form>
+<br>
 
+
+<p>
+<button id="done"><i>done</i></button>
+</p>
 
 	</div>
+
 	<div id="answers">
-		<h1> </h1>
-	</div>
+	<h2>V cool</h2>
+	<h1 id="result"> </h1>
+	<p>
+	<button id="again"><i>again</i></button>
+	</p>
 	
+	
+</div>	
 </body>
 </html>
