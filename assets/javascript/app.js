@@ -1,3 +1,5 @@
+//Setting up the countdown timer
+
 var count = 90;
 
 var gameTime = setInterval("counter()", 1000);
@@ -17,5 +19,9 @@ if (count === 0) {
     //Do nothing
 }
 }
+
+
+
+
 
 

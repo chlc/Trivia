@@ -6,12 +6,23 @@ body{
 #mainbox {
 	margin: 100px auto;
 	text-align: center;
-	height: 650px;
+	height: 1050px;
 	width: 605px;
 	border-style: dashed;
 	border-color: #f1b695;
 	background-color: white;
 	border-width: 5px;
 	
+
+}
+#answers{
+	margin: 100px auto;
+	text-align: center;
+	height: 250px;
+	width: 605px;
+	border-style: dashed;
+	border-color: #f1b695;
+	background-color: white;
+	border-width: 5px;
 
 }
